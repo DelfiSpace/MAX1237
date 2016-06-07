@@ -2,7 +2,7 @@
 #define __MAX1237_H__
 
 #include "Energia.h"
-#include <Wire.h>
+#include <DWire.h>
 
 #define ADDRESS		0x34
 
@@ -22,12 +22,13 @@
 class MAX1237
 {
 protected:
+    DWire *wire;
     unsigned char address;
 
 
 public:
 
-    MAX1237();
+    MAX1237(DWire *);
     virtual ~MAX1237() {};
     
     unsigned short readSingleChannel();
