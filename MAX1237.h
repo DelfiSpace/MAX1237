@@ -22,13 +22,11 @@
 class MAX1237
 {
 protected:
-    DWire *wire;
+    DWire &wire;
     unsigned char address;
 
-
 public:
-
-    MAX1237(DWire *);
+    MAX1237(DWire&);
     virtual ~MAX1237() {};
     
     unsigned short readSingleChannel();

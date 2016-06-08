@@ -5,12 +5,11 @@
  *   MAX1237 class creator function
  *   
  *   Parameters:
- *   DWire *i2c             I2C object pointer
+ *   DWire &i2c             I2C object
  *
  */
-MAX1237:: MAX1237(DWire *i2c)
+MAX1237:: MAX1237(DWire &i2c): wire(i2c)
 {
-    wire = i2c;
 }
 
 /**
@@ -30,13 +29,13 @@ unsigned short MAX1237::readSingleChannel()
     unsigned short ret = -1;
   
     // use the casting to prevent warning on ambiguous conversion
-    if (wire->requestFrom(ADDRESS, (unsigned char)2) == 2)
+    if (wire.requestFrom(ADDRESS, (unsigned char)2) == 2)
     {
-        ((unsigned char*)&ret)[1] = wire->read() & 0x0F;
-        ((unsigned char*)&ret)[0] = wire->read();
+        ((unsigned char*)&ret)[1] = wire.read() & 0x0F;
+        ((unsigned char*)&ret)[0] = wire.read();
     }
 
-    wire->endTransmission(true);
+    wire.endTransmission(true);
     return ret;
 }
 
@@ -52,8 +51,8 @@ unsigned short MAX1237::readSingleChannel()
  */
 void MAX1237::writeRegister(unsigned char val)
 {
-    wire->beginTransmission(ADDRESS);
-    wire->write(val);    
+    wire.beginTransmission(ADDRESS);
+    wire.write(val);    
 
-    wire->endTransmission(true);
+    wire.endTransmission(true);
 }
