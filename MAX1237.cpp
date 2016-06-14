@@ -1,3 +1,16 @@
+/*
+ * Copyright (c) 2016 by Stefano Speretta <s.speretta@tudelft.nl>
+ *
+ * MAX1237: a library to provide high level APIs to interface with the 
+ * MAXIM MAX1237 ADC. It is possible to use this library in Energia 
+ * (the Arduino port for MSP microcontrollers) or in other toolchains.
+ *
+ * This file is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License 
+ * version 3, both as published by the Free Software Foundation.
+ *
+ */
+ 
 #include "MAX1237.h"
 
 /**
