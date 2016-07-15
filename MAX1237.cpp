@@ -11,7 +11,7 @@
  *
  */
  
-#include "MAX1237.h"
+#include <MAX1237.h>
 
 /**
  *
@@ -48,7 +48,6 @@ unsigned short MAX1237::readSingleChannel()
         ((unsigned char*)&ret)[0] = wire.read();
     }
 
-    wire.endTransmission(true);
     return ret;
 }
 
@@ -66,6 +65,5 @@ void MAX1237::writeRegister(unsigned char val)
 {
     wire.beginTransmission(ADDRESS);
     wire.write(val);    
-
-    wire.endTransmission(true);
+    wire.endTransmission();
 }

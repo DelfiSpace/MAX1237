@@ -14,11 +14,10 @@
 #ifndef __MAX1237_H__
 #define __MAX1237_H__
 
-#include "Energia.h"
+#include <Energia.h>
 #include <DWire.h>
 
 #define ADDRESS		0x34
-
 
 #define SCAN0		0x00
 #define SCAN1		0x20
@@ -29,8 +28,6 @@
 #define CS1			0x02
 #define CS2			0x04
 #define CS3			0x06
-
-//#define SEL5
 
 class MAX1237
 {
@@ -46,8 +43,7 @@ public:
     void writeRegister(unsigned char); 
 
 private:
-    
-    
+     
 };
 
 #endif // __MAX1237_H__ 
