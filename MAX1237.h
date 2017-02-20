@@ -14,7 +14,6 @@
 #ifndef __MAX1237_H__
 #define __MAX1237_H__
 
-#include <Energia.h>
 #include <DWire.h>
 
 #define ADDRESS		0x34
